@@ -1,5 +1,5 @@
 import datetime as dt 
-import requests 
+import requests
 
 api_key = 'api_key' #input your own api key
 
@@ -8,7 +8,7 @@ def far_to_cel(fahrenheit): #transformation fahrenheit to celcius
     return celcius
 
 
-try: 
+try: #loop
     while True :
 
         city = input("Enter City: ")
@@ -16,11 +16,11 @@ try:
         data = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&units=imperial&APPID={api_key}")
 
 
-        if data.json()['cod'] == '404': #control if the input exists
+        if data.json()['cod'] == '404': #control if the input exists and if it doesn't
             print("No City Found")
             print(f"______________________________________________")
 
-        else:
+        else: #if the input do exists do all of the following steps
             response = data.json()
 
             temp_f = response['main']['temp']
@@ -53,5 +53,5 @@ try:
             print(f"______________________________________________")
 
 
-except KeyboardInterrupt :
+except KeyboardInterrupt : #how to end the loop
     print(f"Loop interrupted")
