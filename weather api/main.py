@@ -1,7 +1,7 @@
 import datetime as dt 
 import requests 
 
-api_key = '308200d180d866eaf5e77795a5ce218e' #input your own api key
+api_key = 'api_key' #input your own api key
 
 def far_to_cel(fahrenheit): #transformation fahrenheit to celcius
     celcius = (fahrenheit - 32) / 1.8
